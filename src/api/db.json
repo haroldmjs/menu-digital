@@ -1,0 +1,49 @@
+{
+  "products":[
+    {
+      "id": 1,
+      "name": "Producto delicioso",
+      "price": 20,
+      "image": "1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "brioches",
+      "favorite":true
+    },
+    {
+      "id": 2,
+      "name": "Producto delicioso 2",
+      "price": 20,
+      "image": "1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "brioches",
+      "favorite":true
+    },
+    {
+      "id": 3,
+      "name": "Producto delicioso 3",
+      "price": 20,
+      "image": "1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "brioches",
+      "favorite":true
+    },
+    {
+      "id": 4,
+      "name": "Producto delicioso 4",
+      "price": 20,
+      "image": "1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "brioches",
+      "favorite":false
+    },
+    {
+      "id": 5,
+      "name": "Producto delicioso 6",
+      "price": 20,
+      "image": "1.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "brioches",
+      "favorite":false
+    }
+  ]
+}
