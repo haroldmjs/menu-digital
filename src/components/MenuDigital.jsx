@@ -1,11 +1,19 @@
+import { useOverlay } from '../context/OverlayContext'
 import Home from './Home'
-import { CartProvider } from '../context/CartContext'
+import Overlay from './Overlay'
+import { DownUp } from './Transitions'
 
 const MenuDigital = () => {
+  const overlay = useOverlay()
+  const active = overlay.some(setion => setion.active)
+
   return (
-    <CartProvider>
+    <>
       <Home />
-    </CartProvider>
+      <DownUp render={active}>
+        <Overlay />
+      </DownUp>
+    </>
   )
 }
 

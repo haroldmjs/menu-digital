@@ -2,47 +2,56 @@
   "products":[
     {
       "id": 1,
-      "name": "Producto delicioso",
+      "name": "Pernil BBQ",
       "price": 20,
-      "image": "1.jpg",
+      "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "brioches",
       "favorite":true
     },
     {
       "id": 2,
-      "name": "Producto delicioso 2",
-      "price": 20,
-      "image": "1.jpg",
+      "name": "Pernil BBQ",
+      "price": 30,
+      "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "brioches",
       "favorite":true
     },
     {
       "id": 3,
-      "name": "Producto delicioso 3",
-      "price": 20,
-      "image": "1.jpg",
+      "name": "Pernil BBQ",
+      "price": 40,
+      "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "brioches",
       "favorite":true
     },
     {
       "id": 4,
-      "name": "Producto delicioso 4",
+      "name": "Pernil BBQ",
       "price": 20,
-      "image": "1.jpg",
+      "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "brioches",
       "favorite":false
     },
     {
       "id": 5,
-      "name": "Producto delicioso 6",
+      "name": "Pernil BBQ",
       "price": 20,
-      "image": "1.jpg",
+      "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-      "category": "brioches",
+      "category": "para compartir",
+      "favorite":false
+    },
+    {
+      "id": 6,
+      "name": "Pernil BBQ",
+      "price": 20,
+      "image": "product.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "para compartir",
       "favorite":false
     }
   ]

@@ -2,13 +2,14 @@
 import { useSnapCarousel } from 'react-snap-carousel'
 import Product from './Product'
 
-const Carousel = () => {
+const Carousel = ({ products }) => {
   const { scrollRef, pages, activePageIndex, goTo } =
     useSnapCarousel()
+  const productsFavorites = products.filter(product => product.favorite === true)
   return (
     <>
       <ul
-        className='carousel pb-8'
+        className='carousel py-3'
         ref={scrollRef}
         style={{
           display: 'flex',
@@ -16,9 +17,9 @@ const Carousel = () => {
           scrollSnapType: 'x mandatory'
         }}
       >
-        {Array.from({ length: 3 }).map((_, i) => (
+        {Array.from({ length: productsFavorites.length }).map((_, i) => (
           <li key={i} className='mr-2'>
-            <Product />
+            <Product product={productsFavorites[i]} />
           </li>
         ))}
       </ul>

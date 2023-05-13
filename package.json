@@ -10,6 +10,7 @@
     "fake-api": "json-server --watch src/api/db.json"
   },
   "dependencies": {
+    "@react-spring/web": "9.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-snap-carousel": "0.3.1"

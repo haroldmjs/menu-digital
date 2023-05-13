@@ -32,7 +32,35 @@ function cartReducer (cart, action) {
   }
 }
 
-const initialCart = []
+const initialCart = [
+  {
+    id: 1,
+    name: 'Pernil BBQ',
+    price: 20,
+    image: 'product.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    category: 'brioches',
+    quantity: 1
+  },
+  {
+    id: 2,
+    name: 'Pernil BBQ',
+    price: 30,
+    image: 'product.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    category: 'brioches',
+    quantity: 2
+  },
+  {
+    id: 3,
+    name: 'Pernil BBQ',
+    price: 40,
+    image: 'product.jpg',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    category: 'brioches',
+    quantity: 3
+  }
+]
 
 const TYPE = {
   ADD_TO_CART: 'ADD_TO_CART',

@@ -2,12 +2,15 @@ import HomeHeader from './HomeHeader'
 import { helpHttp } from '../helpers/helpHttp'
 import { useEffect, useState } from 'react'
 import Loader from './Loader'
-import Product from './Product'
 import Carousel from './Carousel'
+import CategoryProducts from './CategoryProducts'
+import { useCart } from '../context/CartContext'
+import CartHome from './CartHome'
 
 const Home = () => {
   const [loader, setLoader] = useState(false)
-  const [products, setProducts] = useState(null)
+  const [products, setProducts] = useState([])
+  const cart = useCart()
 
   useEffect(() => {
     const api = helpHttp()
@@ -22,31 +25,22 @@ const Home = () => {
     setLoader(false)
   }, [])
 
-  const handleDots = (lol) => {
-    console.log(lol)
-  }
-
   return (
     <>
       <HomeHeader />
       {loader && <Loader />}
-      <div className='flex flex-col-reverse mx-4 md:w-11/12 md:m-auto'>
-        <Carousel handleDots={handleDots} />
-      </div>
+      {products.length > 0 && (
+        <div className='flex flex-col-reverse mx-4 md:w-11/12 md:m-auto'>
+          <Carousel products={products} />
+        </div>
+      )}
+      <CategoryProducts category='brioches' products={products} />
+      <CategoryProducts category='para compartir' products={products} />
+      {cart.length > 0 && (
+        <CartHome />
+      )}
     </>
   )
 }
 
 export default Home
-// .container {
-//   display: flex;
-//   flex-direction: column-reverse;
-// }
-
-// .container div {
-//   order: 1;
-// }
-
-// .container ul {
-//   order: 2;
-// }
