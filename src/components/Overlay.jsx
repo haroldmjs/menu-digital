@@ -6,8 +6,6 @@ const Overlay = () => {
   const overlay = useOverlay()
   const active = overlay.find(({ active }) => active === true)
 
-  console.log(active)
-
   return (
     <div className=''>
       {active?.section === 'cart' && <Cart />}

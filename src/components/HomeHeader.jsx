@@ -41,7 +41,7 @@ const HomeHeader = () => {
       {/* header search bar */}
       <div className='mx-4 md:w-11/12 md:m-auto'>
         <div className=' flex justify-between bg-grayBackground p-3 mt-3 rounded-lg max-w-sm'>
-          <label>
+          <label id='search'>
             <input type='text' placeholder='Buscar...' className='w-11/12 bg-grayBackground focus-visible:outline-0' />
           </label>
           <select name='' id='' className='focus-visible:outline-0 font-medium'>

@@ -19,10 +19,10 @@
     line-height: 1.1;
     background-color: #dbdbdb;
   }	
-  label {
+  #search {
     position: relative;
   }
-  label:before {
+  #search:before {
     content: "";
     position: absolute;
     left: 10px;

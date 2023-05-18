@@ -6,7 +6,7 @@ const Product = ({ product }) => {
   const dispatchOverlay = useOverlayDispatch()
 
   const handleShowProduct = () => {
-    dispatchOverlay({ type: TYPE.SHOW_PRODUCT, payload: true })
+    dispatchOverlay({ type: TYPE.SHOW_PRODUCT, payload: { active: true, product } })
   }
 
   return (

@@ -28,7 +28,7 @@ function overlayReducer (state, action) {
     case TYPE.SHOW_PRODUCT: {
       return state.map(item => {
         if (item.section === 'product') {
-          return { ...item, active: action.payload }
+          return { ...item, active: action.payload.active, product: action.payload.product }
         }
         return item
       })
@@ -57,6 +57,9 @@ function overlayReducer (state, action) {
         return item
       })
     }
+    case TYPE.CLOSE_OVERLAY: {
+      return initialOverlay
+    }
   }
 }
 
@@ -71,5 +74,6 @@ export const TYPE = {
   SHOW_PRODUCT: 'SHOW_PRODUCT',
   SHOW_CART: 'SHOW_CART',
   SHOW_INFO: 'SHOW_INFO',
-  SHOW_SEND: 'SHOW_SEND'
+  SHOW_SEND: 'SHOW_SEND',
+  CLOSE_OVERLAY: 'CLOSE_OVERLAY'
 }
