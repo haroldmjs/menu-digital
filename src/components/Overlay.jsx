@@ -7,7 +7,7 @@ const Overlay = () => {
   const active = overlay.find(({ active }) => active === true)
 
   return (
-    <div className=''>
+    <div className='md:w-5/12 md:m-auto md:relative bg-white h-screen overflow-auto'>
       {active?.section === 'cart' && <Cart />}
       {active?.section === 'product' && <SingleProduct />}
     </div>

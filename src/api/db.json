@@ -1,58 +1,58 @@
 {
-  "products":[
+  "products": [
     {
       "id": 1,
-      "name": "Pernil BBQ",
-      "price": 20,
+      "name": "Cangrejo",
+      "price": 9.5,
       "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "description": "Ensalada de cangrejo (con aguacate, Cebollin y ajonjolí), lechuga y rodajas de pepino.",
       "category": "brioches",
-      "favorite":true
+      "favorite": true
     },
     {
       "id": 2,
-      "name": "Pernil BBQ",
-      "price": 30,
+      "name": "Camarón",
+      "price": 11.5,
       "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "description": "Camarones cerealizados, tártara estilo brioche, rodajas de tomate y lechuga.",
       "category": "brioches",
-      "favorite":true
+      "favorite": true
     },
     {
       "id": 3,
       "name": "Pernil BBQ",
-      "price": 40,
+      "price": 10.5,
       "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "description": "Pernil, cebolla caramelizada, tocineta, queso amarillo salsa bbq y lechuga.",
       "category": "brioches",
-      "favorite":true
+      "favorite": true
     },
     {
       "id": 4,
-      "name": "Pernil BBQ",
-      "price": 20,
+      "name": "Pernil Coleslaw",
+      "price": 9.5,
       "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "description": "Pernil, queso amarillo y ensalada de repollo y zanahoria.",
       "category": "brioches",
-      "favorite":false
+      "favorite": false
     },
     {
       "id": 5,
-      "name": "Pernil BBQ",
-      "price": 20,
+      "name": "Tenders con Papas",
+      "price": 7.5,
       "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "para compartir",
-      "favorite":false
+      "favorite": false
     },
     {
       "id": 6,
-      "name": "Pernil BBQ",
+      "name": "Papas con Camarones",
       "price": 20,
       "image": "product.jpg",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "para compartir",
-      "favorite":false
+      "favorite": false
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from 'react'
+import { helpHttp } from '../helpers/helpHttp'
 
 export const CartContext = createContext()
 export const CartDispatchContext = createContext()
@@ -25,44 +26,32 @@ export function useCartDispatch () {
 
 function cartReducer (cart, action) {
   switch (action.type) {
-    case TYPE.ADD_TO_CART: { }
-    case TYPE.REMOVE_FROM_CART: { }
-    case TYPE.INCREASE_QUANTITY: { }
-    case TYPE.DECREASE_QUANTITY: { }
+    case TYPE_CART.ADD_TO_CART: {
+      // If product exist sum quantity
+      const same = cart.some(el => el.id === action.payload.id & el.size === action.payload.size)
+      if (same) {
+        const newCart = cart.map(el => {
+          if (el.id === action.payload.id & el.size === action.payload.size) {
+            return { ...el, quantity: el.quantity + action.payload.quantity }
+          } else {
+            return el
+          }
+        })
+        return newCart
+      } else {
+        return [...cart, action.payload]
+      }
+    }
+    case TYPE_CART.REMOVE_FROM_CART: { }
+    case TYPE_CART.INCREASE_QUANTITY: { }
+    case TYPE_CART.DECREASE_QUANTITY: { }
   }
 }
 
 const initialCart = [
-  {
-    id: 1,
-    name: 'Pernil BBQ',
-    price: 20,
-    image: 'product.jpg',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    category: 'brioches',
-    quantity: 1
-  },
-  {
-    id: 2,
-    name: 'Pernil BBQ',
-    price: 30,
-    image: 'product.jpg',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    category: 'brioches',
-    quantity: 2
-  },
-  {
-    id: 3,
-    name: 'Pernil BBQ',
-    price: 40,
-    image: 'product.jpg',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    category: 'brioches',
-    quantity: 3
-  }
 ]
 
-const TYPE = {
+export const TYPE_CART = {
   ADD_TO_CART: 'ADD_TO_CART',
   REMOVE_FROM_CART: 'REMOVE_FROM_CART',
   INCREASE_QUANTITY: 'INCREASE_QUANTITY',
