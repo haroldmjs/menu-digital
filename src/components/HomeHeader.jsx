@@ -3,7 +3,7 @@ import instagram from '../assets/instagram.svg'
 import motocycle from '../assets/motocycle.svg'
 import clock from '../assets/clock.svg'
 
-const HomeHeader = () => {
+const HomeHeader = ({ handleSearch, handleFilter, searchProducts }) => {
   return (
     <>
       {/* header image */}
@@ -42,12 +42,14 @@ const HomeHeader = () => {
       <div className='mx-4 md:w-11/12 md:m-auto'>
         <div className=' flex justify-between bg-grayBackground p-3 mt-3 rounded-lg max-w-sm'>
           <label id='search'>
-            <input type='text' placeholder='Buscar...' className='w-11/12 bg-grayBackground focus-visible:outline-0' />
+            <input type='text' placeholder='Buscar...' onChange={handleSearch} className='w-11/12 bg-grayBackground focus-visible:outline-0 pl-10' />
           </label>
-          <select name='' id='' className='focus-visible:outline-0 font-medium'>
-            <option value=''>Categorias</option>
-            <option value=''>Brioches</option>
-            <option value=''>Para compartir</option>
+          <select name='category' onChange={handleFilter} className='focus-visible:outline-0 font-medium'>
+            <option value='categorias'>Categorias</option>
+            {searchProducts.some(product => product.category === 'brioches') && <option value='brioches'>Brioches</option>}
+            {searchProducts.some(product => product.category === 'para compartir') && <option value='para compartir'>Para compartir</option>}
+            {searchProducts.some(product => product.category === 'ensaladas') && <option value='ensaladas'>Ensaladas</option>}
+            {searchProducts.some(product => product.category === 'acompañantes') && <option value='acompañantes'>Acompañantes</option>}
           </select>
         </div>
       </div>

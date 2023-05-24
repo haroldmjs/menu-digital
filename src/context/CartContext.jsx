@@ -1,5 +1,4 @@
 import { createContext, useContext, useReducer } from 'react'
-import { helpHttp } from '../helpers/helpHttp'
 
 export const CartContext = createContext()
 export const CartDispatchContext = createContext()
@@ -39,12 +38,38 @@ function cartReducer (cart, action) {
         })
         return newCart
       } else {
-        return [...cart, action.payload]
+        const idEdit = Date.now()
+        return [...cart, { ...action.payload, idEdit }]
       }
     }
-    case TYPE_CART.REMOVE_FROM_CART: { }
-    case TYPE_CART.INCREASE_QUANTITY: { }
-    case TYPE_CART.DECREASE_QUANTITY: { }
+    case TYPE_CART.INCREASE_QUANTITY: {
+      return cart.map(product => {
+        if (product.idEdit === action.payload) {
+          return { ...product, quantity: product.quantity + 1 }
+        } else {
+          return product
+        }
+      })
+    }
+    case TYPE_CART.DECREASE_QUANTITY: {
+      const productToDecrease = cart.filter(product => product.idEdit === action.payload)
+      if (productToDecrease[0].quantity > 1) {
+        return cart.map(product => {
+          if (product.idEdit === action.payload) {
+            return { ...product, quantity: product.quantity - 1 }
+          } else {
+            return product
+          }
+        })
+      }
+      return cart.filter(product => product.idEdit !== action.payload)
+    }
+    case TYPE_CART.ADD_INFO: {
+      return [...cart, action.payload]
+    }
+    case TYPE_CART.REMOVE_INFO: {
+      return cart.filter((item) => item.price)
+    }
   }
 }
 
@@ -53,7 +78,8 @@ const initialCart = [
 
 export const TYPE_CART = {
   ADD_TO_CART: 'ADD_TO_CART',
-  REMOVE_FROM_CART: 'REMOVE_FROM_CART',
   INCREASE_QUANTITY: 'INCREASE_QUANTITY',
-  DECREASE_QUANTITY: 'DECREASE_QUANTITY'
+  DECREASE_QUANTITY: 'DECREASE_QUANTITY',
+  ADD_INFO: 'ADD_INFO',
+  REMOVE_INFO: 'REMOVE_INFO'
 }

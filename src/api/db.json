@@ -53,6 +53,24 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
       "category": "para compartir",
       "favorite": false
+    },
+    {
+      "id": 7,
+      "name": "Ensalada de cangrejo",
+      "price": 7.5,
+      "image": "product.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "ensaladas",
+      "favorite": false
+    },
+    {
+      "id": 8,
+      "name": "Papas fritas",
+      "price": 3,
+      "image": "product.jpg",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "category": "acompañantes",
+      "favorite": false
     }
   ]
 }

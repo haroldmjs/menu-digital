@@ -38,7 +38,7 @@ function overlayReducer (state, action) {
         if (item.section === 'cart') {
           return { ...item, active: action.payload }
         }
-        return item
+        return { ...item, active: false }
       })
     }
     case TYPE.SHOW_INFO: {
@@ -46,7 +46,7 @@ function overlayReducer (state, action) {
         if (item.section === 'info') {
           return { ...item, active: action.payload }
         }
-        return item
+        return { ...item, active: false }
       })
     }
     case TYPE.SHOW_SEND: {
@@ -54,7 +54,7 @@ function overlayReducer (state, action) {
         if (item.section === 'send') {
           return { ...item, active: action.payload }
         }
-        return item
+        return { ...item, active: false }
       })
     }
     case TYPE.CLOSE_OVERLAY: {
