@@ -1,8 +1,10 @@
+import { Suspense, lazy } from 'react'
 import { useOverlay } from '../context/OverlayContext'
-import Cart from './Cart'
-import Info from './Info'
-import Send from './Send'
-import SingleProduct from './SingleProduct'
+
+const Cart = lazy(() => import('./Cart'))
+const SingleProduct = lazy(() => import('./SingleProduct'))
+const Info = lazy(() => import('./Info'))
+const Send = lazy(() => import('./Send'))
 
 const Overlay = () => {
   const overlay = useOverlay()
@@ -10,10 +12,12 @@ const Overlay = () => {
 
   return (
     <div className='md:w-5/12 md:m-auto md:relative bg-white h-screen overflow-auto'>
-      {active?.section === 'cart' && <Cart />}
-      {active?.section === 'product' && <SingleProduct />}
-      {active?.section === 'info' && <Info />}
-      {active?.section === 'send' && <Send />}
+      <Suspense fallback={() => (<h1>lol</h1>)}>
+        {active?.section === 'cart' && <Cart />}
+        {active?.section === 'product' && <SingleProduct />}
+        {active?.section === 'info' && <Info />}
+        {active?.section === 'send' && <Send />}
+      </Suspense>
     </div>
   )
 }

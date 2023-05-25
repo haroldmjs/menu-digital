@@ -37,8 +37,14 @@ const SingleProduct = () => {
   // Handle Add To Cart
   const dispatchCart = useCartDispatch()
   const handleAddToCart = () => {
-    const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, size: productSingle.size || 'brioche', quantity }
-    dispatchCart({ type: TYPE_CART.ADD_TO_CART, payload: productToAdd })
+    if (productSingle.category === 'brioches') {
+      const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, size: productSingle.size || 'brioche', quantity }
+      dispatchCart({ type: TYPE_CART.ADD_TO_CART, payload: productToAdd })
+    } else {
+      const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, quantity }
+      dispatchCart({ type: TYPE_CART.ADD_TO_CART, payload: productToAdd })
+    }
+
     handleClose()
   }
 
@@ -73,7 +79,7 @@ const SingleProduct = () => {
               <div>
                 <label htmlFor='quantity' className='mr-2'>Cantidad</label>
                 <button type='button' onClick={handleRest} className='bg-primary text-white w-6 rounded-full'>-</button>
-                <input type='number' id='quantity' value={quantity} min='1' max='50' disabled className='px-0 w-8 text-center' />
+                <input type='number' id='quantity' value={quantity} min='1' max='50' disabled className='px-0 w-10 text-center' />
                 <button type='button' onClick={handleSum} className='bg-primary text-white w-6 rounded-full '>+</button>
               </div>
             </div>

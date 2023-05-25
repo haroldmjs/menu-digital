@@ -79,7 +79,7 @@ ${info.observation && `Obeservación: *${info.observation}*`}`
       </div>
       {/* Button Details Shopping  */}
       <div className='relative w-full'>
-        <div className='px-4 pb-7 fixed bottom-0 w-full bg-white'>
+        <div className='px-4 pb-7 fixed bottom-0 w-full bg-white md:w-5/12'>
           <div className='border-t-2 border-grayBackground pt-4 flex justify-between mb-2'>
             <p className='font-medium'>Total Estimado</p>
             <span className='font-medium'>$ {total.toFixed(2)}</span>

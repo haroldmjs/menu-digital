@@ -55,7 +55,7 @@ const Cart = () => {
           return (
             <div className='border-b-2 border-b-grayBackground pb-3 mt-3 last:border-b-0' key={i}>
               <div className='flex justify-between mb-1'>
-                <h5 className='font-medium'>{product.name} <span className='text-gray'>({product.size})</span></h5>
+                <h5 className='font-medium'>{product.name} <span className='text-gray'>{product.size && `(${product.size})`}</span></h5>
                 <p>$ {(product.price * product.quantity).toFixed(2)}</p>
               </div>
               <div>
@@ -68,7 +68,7 @@ const Cart = () => {
         })}
       </div>
       {/* Button Start Shopping  */}
-      <div className='px-4 pb-7 fixed bottom-0 w-full bg-white'>
+      <div className='px-4 pb-7 fixed bottom-0 w-full bg-white md:w-5/12'>
         <div className='border-t-2 border-grayBackground pt-4 flex justify-between mb-2'>
           <p className='font-medium'>Total Estimado</p>
           <span className='font-medium'>$ {total.toFixed(2)}</span>
