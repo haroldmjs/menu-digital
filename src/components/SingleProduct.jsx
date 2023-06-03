@@ -57,7 +57,7 @@ const SingleProduct = () => {
         </div>
       </div>
       {/* Img Product  */}
-      <div style={{ backgroundImage: `url("src/assets/products/${productSingle.image}` }} className='h-[40vh]  bg-cover bg-center' />
+      <div style={{ backgroundImage: `url("/assets/products/${productSingle.image}` }} className='h-[40vh]  bg-cover bg-center' />
       {/* Product Details  */}
       <div className='p-4 pt-8 pb-20 rounded-t-xl -mt-3 bg-white'>
         <h4 className='font-semibold text-xl mb-2'>{productSingle.name}</h4>
