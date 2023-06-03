@@ -17,7 +17,7 @@ const Home = () => {
   // Get Products
   useEffect(() => {
     const api = helpHttp()
-    const urlProducts = 'http://localhost:3000/products'
+    const urlProducts = 'http://menu-brioche.fly.dev/api/products'
 
     setLoader(true)
 

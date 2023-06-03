@@ -1,76 +1,211 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Cangrejo",
+      "name": "cangrejo",
       "price": 9.5,
-      "image": "product.jpg",
+      "image": "cangrejo.jpg",
       "description": "Ensalada de cangrejo (con aguacate, Cebollin y ajonjolí), lechuga y rodajas de pepino.",
       "category": "brioches",
-      "favorite": true
+      "favorite": true,
+      "available": true
     },
     {
-      "id": 2,
-      "name": "Camarón",
+      "name": "camaron",
       "price": 11.5,
-      "image": "product.jpg",
+      "image": "camaron.jpg",
       "description": "Camarones cerealizados, tártara estilo brioche, rodajas de tomate y lechuga.",
       "category": "brioches",
-      "favorite": true
+      "favorite": true,
+      "available": true
     },
     {
-      "id": 3,
-      "name": "Pernil BBQ",
+      "name": "reina pepiada",
       "price": 10.5,
-      "image": "product.jpg",
+      "image": "pepiada.jpg",
+      "description": "Ensalada de pollo con un toque crunchy de tocineta, maíz, lechuga y queso amarillo.",
+      "category": "brioches",
+      "favorite": true,
+      "available": true
+    },
+    {
+      "name": "pernil clasico",
+      "price": 9.5,
+      "image": "pernil.jpg",
+      "description": "Pernil, pico de gallo, queso amarillo, lechuga y salsa de perejilo carpaccio.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "pernil bbq",
+      "price": 10.5,
+      "image": "bbq.jpg",
       "description": "Pernil, cebolla caramelizada, tocineta, queso amarillo salsa bbq y lechuga.",
       "category": "brioches",
-      "favorite": true
+      "favorite": false,
+      "available": true
     },
     {
-      "id": 4,
-      "name": "Pernil Coleslaw",
+      "name": "pernil coleslaw",
       "price": 9.5,
-      "image": "product.jpg",
+      "image": "coleslaw.jpg",
       "description": "Pernil, queso amarillo y ensalada de repollo y zanahoria.",
       "category": "brioches",
-      "favorite": false
+      "favorite": false,
+      "available": true
     },
     {
-      "id": 5,
-      "name": "Tenders con Papas",
+      "name": "chorizo",
+      "price": 10.5,
+      "image": "chorizo.jpg",
+      "description": "Chorizo la monserratina, pico e' gallo, salsa de perejil, aguacate en cuadritos, queso amarillo y lechuga.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "pollo crispy",
+      "price": 10.5,
+      "image": "crispy.jpg",
+      "description": "Pollo crujiente, tocineta, salsa cajún, queso amarillo y lechuga.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "cesar con pollo",
+      "price": 11.5,
+      "image": "cesar.jpg",
+      "description": "Lechuga con aderezo César y trocitos de tocineta, queso parmesano y pechuga de pollo a la plancha.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "cesar con camaron",
+      "price": 12.5,
+      "image": "cesarcamaron.jpg",
+      "description": "Lechuga con aderezo César y trocitos de tocineta, queso parmesano y camarones a la plancha.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "vegetariano",
+      "price": 8.5,
+      "image": "vegetariano.jpg",
+      "description": "Berenjenas a la plancha con ajo y orégano, aguacate, tomate y pesto de albahaca.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "atun",
+      "price": 11,
+      "image": "atun.jpg",
+      "description": "Atún con cebolla morada ﬁnamente picada y aderezo especial de la casa, rodajas de tomate y alfalfa fresca.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "romina texana",
+      "price": 10.5,
+      "image": "texana.jpg",
+      "description": "Lomito en tiritas salteado con pimentón y cebolla, queso gratinado, lechuga y aliolí.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "sweet lomino",
+      "price": 10.5,
+      "image": "lomito.jpg",
+      "description": "Lomito en tiritas, cebolla caramelizada, queso amarillo, lechuga y aliolí.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "natalia capresa",
+      "price": 10.5,
+      "image": "capresa.jpg",
+      "description": "Pollo crispy, queso mozarella gratinado, rodajas de tomate, mayopesto y lechuga.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "tenders con papas",
       "price": 7.5,
-      "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "image": "tenders.jpg",
+      "description": "Tenders deliciosos.",
       "category": "para compartir",
-      "favorite": false
+      "favorite": false,
+      "available": true
     },
     {
-      "id": 6,
-      "name": "Papas con Camarones",
-      "price": 20,
-      "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "name": "papas con camarones",
+      "price": 9.5,
+      "image": "papascamarones.jpg",
+      "description": "Papas deliciosas.",
       "category": "para compartir",
-      "favorite": false
+      "favorite": false,
+      "available": true
     },
     {
-      "id": 7,
-      "name": "Ensalada de cangrejo",
+      "name": "papas con chorizo",
+      "price": 7,
+      "image": "papaschorizo.jpg",
+      "description": "Papas deliciosas.",
+      "category": "para compartir",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "nachos brioche",
+      "price": 8,
+      "image": "nachos.jpg",
+      "description": "Nachos deliciosos.",
+      "category": "para compartir",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "lomito salteado",
       "price": 7.5,
-      "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "image": "lomitosalteado.jpg",
+      "description": "Lomito delicioso.",
+      "category": "para compartir",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "ensalada de cangrejo",
+      "price": 7.5,
+      "image": "ensaladacangrejo.jpg",
+      "description": "Ensalada deliciosa.",
       "category": "ensaladas",
-      "favorite": false
+      "favorite": false,
+      "available": true
     },
     {
-      "id": 8,
-      "name": "Papas fritas",
+      "name": "papas fritas",
       "price": 3,
-      "image": "product.jpg",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "image": "papasfritas.jpg",
+      "description": "Papas deliciosas.",
       "category": "acompañantes",
-      "favorite": false
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "dedos de yuca",
+      "price": 2,
+      "image": "dedosdeyuca.jpg",
+      "description": "Dedos de yuca deliciosos.",
+      "category": "acompañantes",
+      "favorite": false,
+      "available": true
     }
   ]
 }
