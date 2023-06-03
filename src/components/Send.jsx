@@ -1,6 +1,6 @@
-import arrowBack from '../assets/arrow-back.svg'
-import close from '../assets/close.svg'
-import whatsapp from '../assets/whatsapp.svg'
+import arrowBack from '../../public/assets/arrow-back.svg'
+import close from '../../public/assets/close.svg'
+import whatsapp from '../../public/assets/whatsapp.svg'
 import { TYPE_CART, useCart, useCartDispatch } from '../context/CartContext'
 import { TYPE, useOverlayDispatch } from '../context/OverlayContext'
 

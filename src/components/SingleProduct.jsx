@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import arrowBack from '../assets/arrow-back.svg'
+import arrowBack from '../../public/assets/arrow-back.svg'
 import { TYPE, useOverlay, useOverlayDispatch } from '../context/OverlayContext'
 import { TYPE_CART, useCartDispatch } from '../context/CartContext'
 

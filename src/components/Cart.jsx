@@ -1,5 +1,5 @@
 import { TYPE, useOverlayDispatch } from '../context/OverlayContext'
-import close from '../assets/close.svg'
+import close from '../../public/assets/close.svg'
 import { useCart, useCartDispatch, TYPE_CART } from '../context/CartContext'
 import { useEffect } from 'react'
 

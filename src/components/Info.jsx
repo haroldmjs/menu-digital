@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import arrowBack from '../assets/arrow-back.svg'
-import close from '../assets/close.svg'
+import arrowBack from '../../public/assets/arrow-back.svg'
+import close from '../../public/assets/close.svg'
 import { TYPE_CART, useCart, useCartDispatch } from '../context/CartContext'
 import { TYPE, useOverlayDispatch } from '../context/OverlayContext'
 
