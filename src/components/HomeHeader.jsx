@@ -1,16 +1,16 @@
-import whatsapp from '../assets/whatsapp.svg'
-import instagram from '../assets/instagram.svg'
-import motocycle from '../assets/motocycle.svg'
-import clock from '../assets/clock.svg'
+import whatsapp from '../../public/assets/whatsapp.svg'
+import instagram from '../../public/assets/instagram.svg'
+import motocycle from '../../public/assets/motocycle.svg'
+import clock from '../../public/assets/clock.svg'
 
 const HomeHeader = ({ handleSearch, handleFilter, searchProducts }) => {
   return (
     <>
       {/* header image */}
-      <div className='h-72 w-12/12 md:w-11/12 m-auto md:rounded-b-lg bg-primary bg-[url("assets/header.jpg")] bg-cover bg-center' />
+      <div className='h-72 w-12/12 md:w-11/12 m-auto md:rounded-b-lg bg-primary bg-[url("/assets/header.jpg")] bg-cover bg-center' />
       {/* header logo and text */}
       <div className='flex justify-between md:w-11/12 m-auto'>
-        <img src='src/assets/logo.jpg' alt='Brioche Delivery' className='w-24 h-24 -mt-10 ml-4 rounded-full border-8 border-white' />
+        <img src='/assets/logo.jpg' alt='Brioche Delivery' className='w-24 h-24 -mt-10 ml-4 rounded-full border-8 border-white' />
         <ul className='flex items-center gap-2 mr-4'>
           <li className='bg-primary rounded-full p-1.5'>
             <a href='https://wa.me/5804121905722' target='_blank' rel='noreferrer'>
