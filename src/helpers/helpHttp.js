@@ -28,7 +28,9 @@ export const helpHttp = () => {
             statusText: res.statusText || 'Ocurrió un error'
           })
       )
-      .catch((err) => err)
+      .catch((err) => {
+        throw new Error(`Error en la peticion:  ${err.status} - ${err.statusText} `)
+      })
   }
 
   const get = (url, options = {}) => customFetch(url, options)

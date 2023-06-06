@@ -12,21 +12,44 @@ const Home = () => {
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState('')
   const [searchProducts, setSearchProducts] = useState([])
+  const [error, setError] = useState(false)
   const cart = useCart()
 
   // Get Products
   useEffect(() => {
     const api = helpHttp()
     const urlProducts = 'http://menu-brioche.fly.dev/api/products'
+    const maxRetries = 5
+    let retryCount = 0
 
+    const fetchData = () => {
+      api.get(urlProducts).then(res => {
+        window.localStorage.setItem('productDataV1', JSON.stringify(res))
+        setProducts(res)
+        setSearchProducts(res)
+        setLoader(false)
+      }).catch(err => {
+        console.error(err)
+        if (retryCount < maxRetries) {
+          retryCount++
+          setTimeout(fetchData, 1000)
+        } else {
+          setError(true)
+          console.error('Error en la conexion con la BDD')
+        }
+      })
+    }
+
+    // Use Cache or Create Cache
+    const cachedProducts = window.localStorage.getItem('productDataV1')
     setLoader(true)
-
-    api.get(urlProducts).then(res => {
-      setProducts(res)
-      setSearchProducts(res)
-    })
-
-    setLoader(false)
+    if (cachedProducts) {
+      setProducts(JSON.parse(cachedProducts))
+      setSearchProducts(JSON.parse(cachedProducts))
+      setLoader(false)
+    } else {
+      fetchData()
+    }
   }, [])
 
   // Search and Filter
@@ -45,8 +68,8 @@ const Home = () => {
 
   return (
     <>
+      {loader && <Loader error={error} />}
       <HomeHeader handleSearch={handleSearch} handleFilter={handleFilter} searchProducts={searchProducts} />
-      {loader && <Loader />}
       {/* Carrousel  */}
       {search.length > 0 || (
         products.length > 0 && (

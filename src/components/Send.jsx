@@ -35,17 +35,17 @@ const Send = () => {
     const message = `${info.name && `Cliente: ${info.name}
     `}
 ${cart.map(product => {
-  return (`— [ ${product.quantity} ] ${product.name} - ${product.size} > *$ ${(product.price * product.quantity).toFixed(2)}*`)
+  return (`— [ ${product.quantity} ] ${product.name} ${product.size ? `- ${product.size}` : ''} > *$ ${(product.price * product.quantity).toFixed(2)}*`)
 }).join('\n')}
     
 *Total: $ ${total.toFixed(2)}*
 Forma de pago: *${info.payment}*
 Entrega: *${info.entrega}*
 ${info.address && `Dirección: *${info.address}*`}
-${info.observation && `Obeservación: *${info.observation}*`}`
+${info.observation && `Observación: *${info.observation}*`}`
 
     const messageEncode = encodeURIComponent(message)
-    const url = `https://wa.me/5804121905722?text=${messageEncode}`
+    const url = `https://wa.me/5804121927347?text=${messageEncode}`
     window.open(url, '_blank')
   }
 
@@ -69,7 +69,7 @@ ${info.observation && `Obeservación: *${info.observation}*`}`
               <div className='flex justify-between mb-1'>
                 <div className='flex'>
                   <span className='px-1 mr-2 rounded-[3px] bg-grayBackground font-medium'>{product.quantity}</span>
-                  <h5 className='font-medium'>{product.name} <span className='text-gray'>({product.size})</span></h5>
+                  <h5 className='font-medium'>{product.name} <span className='text-gray'>{product.size && (`(${product.size})`)}</span></h5>
                 </div>
                 <p className='font-medium'>$ {(product.price * product.quantity).toFixed(2)}</p>
               </div>

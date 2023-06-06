@@ -13,7 +13,7 @@ const HomeHeader = ({ handleSearch, handleFilter, searchProducts }) => {
         <img src='/assets/logo.jpg' alt='Brioche Delivery' className='w-24 h-24 -mt-10 ml-4 rounded-full border-8 border-white' />
         <ul className='flex items-center gap-2 mr-4'>
           <li className='bg-primary rounded-full p-1.5'>
-            <a href='https://wa.me/5804121905722' target='_blank' rel='noreferrer'>
+            <a href='https://wa.me/5804121927347' target='_blank' rel='noreferrer'>
               <img src={whatsapp} alt='Whatsapp' />
             </a>
           </li>

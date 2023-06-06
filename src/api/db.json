@@ -24,7 +24,7 @@
       "image": "pepiada.jpg",
       "description": "Ensalada de pollo con un toque crunchy de tocineta, maíz, lechuga y queso amarillo.",
       "category": "brioches",
-      "favorite": true,
+      "favorite": false,
       "available": true
     },
     {
@@ -42,7 +42,7 @@
       "image": "bbq.jpg",
       "description": "Pernil, cebolla caramelizada, tocineta, queso amarillo salsa bbq y lechuga.",
       "category": "brioches",
-      "favorite": false,
+      "favorite": true,
       "available": true
     },
     {
@@ -77,15 +77,6 @@
       "price": 11.5,
       "image": "cesar.jpg",
       "description": "Lechuga con aderezo César y trocitos de tocineta, queso parmesano y pechuga de pollo a la plancha.",
-      "category": "brioches",
-      "favorite": false,
-      "available": true
-    },
-    {
-      "name": "cesar con camaron",
-      "price": 12.5,
-      "image": "cesarcamaron.jpg",
-      "description": "Lechuga con aderezo César y trocitos de tocineta, queso parmesano y camarones a la plancha.",
       "category": "brioches",
       "favorite": false,
       "available": true
@@ -136,10 +127,19 @@
       "available": true
     },
     {
+      "name": "cesar con camaron",
+      "price": 12.5,
+      "image": "cesarcamaron.jpg",
+      "description": "Lechuga con aderezo César y trocitos de tocineta, queso parmesano y camarones a la plancha.",
+      "category": "brioches",
+      "favorite": false,
+      "available": true
+    },
+    {
       "name": "tenders con papas",
       "price": 7.5,
       "image": "tenders.jpg",
-      "description": "Tenders deliciosos.",
+      "description": "",
       "category": "para compartir",
       "favorite": false,
       "available": true
@@ -148,7 +148,7 @@
       "name": "papas con camarones",
       "price": 9.5,
       "image": "papascamarones.jpg",
-      "description": "Papas deliciosas.",
+      "description": "",
       "category": "para compartir",
       "favorite": false,
       "available": true
@@ -157,16 +157,7 @@
       "name": "papas con chorizo",
       "price": 7,
       "image": "papaschorizo.jpg",
-      "description": "Papas deliciosas.",
-      "category": "para compartir",
-      "favorite": false,
-      "available": true
-    },
-    {
-      "name": "nachos brioche",
-      "price": 8,
-      "image": "nachos.jpg",
-      "description": "Nachos deliciosos.",
+      "description": "",
       "category": "para compartir",
       "favorite": false,
       "available": true
@@ -175,7 +166,16 @@
       "name": "lomito salteado",
       "price": 7.5,
       "image": "lomitosalteado.jpg",
-      "description": "Lomito delicioso.",
+      "description": "",
+      "category": "para compartir",
+      "favorite": false,
+      "available": true
+    },
+    {
+      "name": "nachos brioche",
+      "price": 8,
+      "image": "nachos.jpg",
+      "description": "",
       "category": "para compartir",
       "favorite": false,
       "available": true
@@ -184,7 +184,7 @@
       "name": "ensalada de cangrejo",
       "price": 7.5,
       "image": "ensaladacangrejo.jpg",
-      "description": "Ensalada deliciosa.",
+      "description": "",
       "category": "ensaladas",
       "favorite": false,
       "available": true
@@ -193,7 +193,7 @@
       "name": "papas fritas",
       "price": 3,
       "image": "papasfritas.jpg",
-      "description": "Papas deliciosas.",
+      "description": "",
       "category": "acompañantes",
       "favorite": false,
       "available": true
@@ -202,7 +202,7 @@
       "name": "dedos de yuca",
       "price": 2,
       "image": "dedosdeyuca.jpg",
-      "description": "Dedos de yuca deliciosos.",
+      "description": "",
       "category": "acompañantes",
       "favorite": false,
       "available": true

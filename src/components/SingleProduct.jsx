@@ -17,6 +17,7 @@ const SingleProduct = () => {
   const overlay = useOverlay()
   const section = overlay.filter(el => el.section === 'product')
   const { product } = section[0]
+  const productName = product.name.charAt(0).toUpperCase() + product.name.slice(1)
   const [productSingle, setProductSingle] = useState(product)
 
   // Close Overlay Component
@@ -60,7 +61,7 @@ const SingleProduct = () => {
       <div style={{ backgroundImage: `url("/assets/products/${productSingle.image}` }} className='h-[40vh]  bg-cover bg-center' />
       {/* Product Details  */}
       <div className='p-4 pt-8 pb-20 rounded-t-xl -mt-3 bg-white'>
-        <h4 className='font-semibold text-xl mb-2'>{productSingle.name}</h4>
+        <h4 className='font-semibold text-xl mb-2'>{productName}</h4>
         {/* Options and Quantity Product  */}
         {productSingle.category === 'brioches' && (
           <form>

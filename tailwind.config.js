@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'bounce-slow': 'bounce 2s infinite',
+        'pulse-slow': 'pulse 1s infinite'
+      },
       colors: {
         primary: '#B06B42',
         primaryBackground: '#B06B42',
