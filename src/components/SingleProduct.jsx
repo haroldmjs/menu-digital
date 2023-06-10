@@ -26,12 +26,29 @@ const SingleProduct = () => {
     dispatchOverlay({ type: TYPE.CLOSE_OVERLAY })
   }
 
-  // Change Option of Product
+  // Change Options of Product
   const handleOptions = (e) => {
+    // Change Size
     if (e.target.value === 'mini') {
       setProductSingle({ ...productSingle, price: productSingle.price - 3, size: e.target.value })
     } else if (e.target.value === 'brioche') {
       setProductSingle({ ...productSingle, price: productSingle.price + 3, size: e.target.value })
+    }
+
+    // Change combo
+    if (e.target.value === 'papas') {
+      if (e.target.checked) {
+        setProductSingle({ ...productSingle, price: productSingle.price + 1, papas: true })
+      } else {
+        setProductSingle({ ...productSingle, price: productSingle.price - 1, papas: false })
+      }
+    }
+    if (e.target.value === 'yuquitas') {
+      if (e.target.checked) {
+        setProductSingle({ ...productSingle, price: productSingle.price + 1, yuquitas: true })
+      } else {
+        setProductSingle({ ...productSingle, price: productSingle.price - 1, yuquitas: false })
+      }
     }
   }
 
@@ -39,7 +56,7 @@ const SingleProduct = () => {
   const dispatchCart = useCartDispatch()
   const handleAddToCart = () => {
     if (productSingle.category === 'brioches') {
-      const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, size: productSingle.size || 'brioche', quantity }
+      const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, size: productSingle.size || 'brioche', quantity, papas: productSingle.papas || false, yuquitas: productSingle.yuquitas || false }
       dispatchCart({ type: TYPE_CART.ADD_TO_CART, payload: productToAdd })
     } else {
       const productToAdd = { id: productSingle.id, name: productSingle.name, price: productSingle.price, category: productSingle.category, quantity }
@@ -61,18 +78,27 @@ const SingleProduct = () => {
       <div style={{ backgroundImage: `url("/assets/products/${productSingle.image}` }} className='h-[40vh]  bg-cover bg-center' />
       {/* Product Details  */}
       <div className='p-4 pt-8 pb-20 rounded-t-xl -mt-3 bg-white'>
-        <h4 className='font-semibold text-xl mb-2'>{productName}</h4>
+        <h4 className='font-bold text-xl mb-2'>{productName}</h4>
         {/* Options and Quantity Product  */}
         {productSingle.category === 'brioches' && (
           <form>
             <label htmlFor='' className='font-semibold'>Tamaño*</label>
             <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
               <input type='radio' id='mini' value='mini' name='size' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleOptions} />
-              <label htmlFor='mini' className='ml-1 select-none'>Mini <span className='text-gray'>(7cm)</span></label>
+              <label htmlFor='mini' className='ml-1 select-none'>Mini <span className='text-gray'>(15cm)</span></label>
             </div>
-            <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
+            <div className='flex items-center border-b-2 border-b-grayBackground py-2 mb-4'>
               <input type='radio' id='brioche' value='brioche' name='size' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleOptions} defaultChecked />
-              <label htmlFor='brioche' className='ml-1 select-none'>Brioche <span className='text-gray'>(14cm)</span></label>
+              <label htmlFor='brioche' className='ml-1 select-none'>Brioche <span className='text-gray'>(20cm)</span></label>
+            </div>
+            <label htmlFor='' className='font-semibold'>Combo</label>
+            <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
+              <input type='checkbox' id='papas' value='papas' name='combo' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleOptions} />
+              <label htmlFor='papas' className='ml-1 select-none'>Papas <span className='text-gray'>(+$ 1.00)</span></label>
+            </div>
+            <div className='flex items-center border-b-2 border-b-grayBackground py-2 mb-4'>
+              <input type='checkbox' id='yuquitas' value='yuquitas' name='combo' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleOptions} />
+              <label htmlFor='yuquitas' className='ml-1 select-none'>Yuquitas <span className='text-gray'>(+$ 1.00)</span></label>
             </div>
             <div />
             <div className='flex justify-between mt-2'>
@@ -93,7 +119,7 @@ const SingleProduct = () => {
         </p>
       </div>
       {/* Button Add to Cart  */}
-      <div className='fixed z-10 bottom-0 p-4 pt-7 w-full md:w-5/12 bg-gradient-to-t from-white to-white/25'>
+      <div className='fixed z-10 bottom-0 p-4 pt-7 w-full md:w-5/12 bg-gradient-to-t from-white to-white/0'>
         <div className='flex bg-primary w-12/12 m-auto justify-between px-5 py-4 rounded-lg cursor-pointer' onClick={handleAddToCart}>
           <p className='font-semibold text-white'>Agregar
             <span className='bg-[#865132] p-1.5 rounded-lg ml-1.5'>

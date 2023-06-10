@@ -27,10 +27,10 @@ function cartReducer (cart, action) {
   switch (action.type) {
     case TYPE_CART.ADD_TO_CART: {
       // If product exist sum quantity
-      const same = cart.some(el => el.id === action.payload.id & el.size === action.payload.size)
+      const same = cart.some(el => el.id === action.payload.id & el.size === action.payload.size & el.papas === action.payload.papas & el.yuquitas === action.payload.yuquitas)
       if (same) {
         const newCart = cart.map(el => {
-          if (el.id === action.payload.id & el.size === action.payload.size) {
+          if (el.id === action.payload.id & el.size === action.payload.size & el.papas === action.payload.papas & el.yuquitas === action.payload.yuquitas) {
             return { ...el, quantity: el.quantity + action.payload.quantity }
           } else {
             return el

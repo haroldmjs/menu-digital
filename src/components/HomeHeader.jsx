@@ -34,7 +34,7 @@ const HomeHeader = ({ handleSearch, handleFilter, searchProducts }) => {
           </div>
           <div className='flex items-center gap-1 font-semibold text-sm ml-7'>
             <img src={motocycle} alt='delivery' />
-            <span>15-20 mins</span>
+            <span>20-30 mins</span>
           </div>
         </div>
       </div>

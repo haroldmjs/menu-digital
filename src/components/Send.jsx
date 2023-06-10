@@ -35,7 +35,8 @@ const Send = () => {
     const message = `${info.name && `Cliente: ${info.name}
     `}
 ${cart.map(product => {
-  return (`— [ ${product.quantity} ] ${product.name} ${product.size ? `- ${product.size}` : ''} > *$ ${(product.price * product.quantity).toFixed(2)}*`)
+  const hasCombo = product.papas || product.yuquitas
+  return (`— [ ${product.quantity} ] ${product.name} ${product.size ? `- ${product.size}` : ''} ${hasCombo && `${product.papas ? '+papas' : ''} ${product.yuquitas ? '+yuquitas' : ''}`} > *$ ${(product.price * product.quantity).toFixed(2)}*`)
 }).join('\n')}
     
 *Total: $ ${total.toFixed(2)}*
@@ -73,6 +74,14 @@ ${info.observation && `Observación: *${info.observation}*`}`
                 </div>
                 <p className='font-medium'>$ {(product.price * product.quantity).toFixed(2)}</p>
               </div>
+              {product.yuquitas || product.papas
+                ? (
+                  <div className='-mt-1 text-gray text-[15px] pl-6'>
+                    {product.papas && <span className='mr-2'>+papas</span>}
+                    {product.yuquitas && <span>+yuquitas</span>}
+                  </div>
+                  )
+                : ''}
             </div>
           )
         })}

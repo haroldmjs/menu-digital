@@ -53,11 +53,19 @@ const Cart = () => {
         <h3 className='font-semibold text-xl mb-6'>Tu pedido <span className='text-gray'>({cart.length})</span></h3>
         {cart.map((product, i) => {
           return (
-            <div className='border-b-2 border-b-grayBackground pb-3 mt-3 last:border-b-0' key={i}>
+            <div className='border-b-2 border-b-grayBackground pb-3 mt-2 last:border-b-0' key={i}>
               <div className='flex justify-between mb-1'>
                 <h5 className='font-medium'>{product.name} <span className='text-gray'>{product.size && `(${product.size})`}</span></h5>
                 <p>$ {(product.price * product.quantity).toFixed(2)}</p>
               </div>
+              {product.yuquitas || product.papas
+                ? (
+                  <div className='-mt-1 mb-1 text-gray text-[15px]'>
+                    {product.papas && <span className='mr-2'>+papas</span>}
+                    {product.yuquitas && <span>+yuquitas</span>}
+                  </div>
+                  )
+                : ''}
               <div>
                 <button type='button' onClick={() => handleRest(product.idEdit)} className='bg-primary text-white w-6 rounded-full'>-</button>
                 <input type='number' id='quantity' min='1' value={product.quantity} max='50' disabled className='px-0 w-8 text-center bg-white' />

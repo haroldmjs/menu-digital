@@ -75,9 +75,17 @@ const Info = () => {
             <input type='radio' id='movil' value='Pago Movil' name='payment' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleForm} />
             <label htmlFor='movil' className='ml-1 select-none'>Pago móvil</label>
           </div>
-          <div className='flex items-center border-b-2 border-b-grayBackground py-2 mb-8'>
+          <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
             <input type='radio' id='zelle' value='Zelle' name='payment' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleForm} />
             <label htmlFor='zelle' className='ml-1 select-none'>Zelle</label>
+          </div>
+          <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
+            <input type='radio' id='binance' value='Binance' name='payment' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleForm} />
+            <label htmlFor='binance' className='ml-1 select-none'>Binance</label>
+          </div>
+          <div className='flex items-center border-b-2 border-b-grayBackground py-2 mb-8'>
+            <input type='radio' id='reserve' value='Reserve' name='payment' className='appearance-none rounded-full w-5 h-5 border-grayBackground border-2 p-0 grid place-content-center before:content-[""] before:w-2.5 before:h-2.5 before:checked:bg-primary before:rounded-full' onChange={handleForm} />
+            <label htmlFor='reserve' className='ml-1 select-none'>Reserve</label>
           </div>
           <label className='font-semibold'>Entrega</label>
           <div className='flex items-center border-b-2 border-b-grayBackground py-2'>
